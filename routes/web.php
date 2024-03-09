@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Function_;
 use PhpParser\Node\Expr\FuncCall;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +28,8 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.dashboard');
     })->name('home');
     Route::resource('user', UserController::class);
-
+    //category
+    Route::resource('category', CategoryController::class);
+    //product
+    Route::resource('product', ProductController::class);
 });
